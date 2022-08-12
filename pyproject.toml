@@ -9,7 +9,7 @@ requires = [
 [project]
 name = "example"
 description = 'Example'
-maintainers = [{name = "Bas", email = "basnijholt@microsoft.com"}]
+maintainers = [{name = "Bas", email = "bas@nijho.lt"}]
 license = {text = "MIT"}
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -47,10 +47,3 @@ distance-dirty = "{version}.dev{distance}+{branch}.{vcs}{rev}.dirty"
 [tool.versioningit.onbuild]
 build-file = "example/_version.py"
 source-file = "example/_version.py"
-
-[tool.isort]
-line_length = 140
-profile = "black"
-
-[tool.black]
-line_length = 140
