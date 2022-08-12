@@ -1,0 +1,56 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+  "setuptools >= 61.2",
+  "versioningit ~= 1.0",
+  "wheel",
+]
+
+[project]
+name = "example"
+description = 'Example'
+maintainers = [{name = "Bas", email = "basnijholt@microsoft.com"}]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+requires-python = ">=3.9"
+dynamic = ["version"]
+dependencies = [
+    "versioningit>=2.0.1",
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages]
+find = {namespaces = false}
+
+[tool.setuptools.package-data]
+example = [
+    "*.yaml",
+    "*.gds",
+    "*.ttf",
+]
+
+[tool.versioningit]
+default-version = "0.0"
+
+[tool.versioningit.format]
+dirty = "{version}.dev{distance}+{branch}.{vcs}{rev}.dirty"
+distance = "{version}.dev{distance}+{branch}.{vcs}{rev}"
+distance-dirty = "{version}.dev{distance}+{branch}.{vcs}{rev}.dirty"
+
+[tool.versioningit.onbuild]
+build-file = "example/_version.py"
+source-file = "example/_version.py"
+
+[tool.isort]
+line_length = 140
+profile = "black"
+
+[tool.black]
+line_length = 140
