@@ -2,7 +2,7 @@
 build-backend = "setuptools.build_meta"
 requires = [
   "setuptools >= 61.2",
-  "versioningit ~= 1.0",
+  "versioningit ~= 2.0",
   "wheel",
 ]
 
@@ -11,12 +11,6 @@ name = "example"
 description = 'Example'
 maintainers = [{name = "Bas", email = "bas@nijho.lt"}]
 license = {text = "MIT"}
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-]
 requires-python = ">=3.9"
 dynamic = ["version"]
 dependencies = [
@@ -28,13 +22,6 @@ include-package-data = true
 
 [tool.setuptools.packages]
 find = {namespaces = false}
-
-[tool.setuptools.package-data]
-example = [
-    "*.yaml",
-    "*.gds",
-    "*.ttf",
-]
 
 [tool.versioningit]
 default-version = "0.0"
